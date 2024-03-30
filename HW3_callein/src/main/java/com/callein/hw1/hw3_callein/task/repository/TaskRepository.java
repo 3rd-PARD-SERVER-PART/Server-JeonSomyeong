@@ -4,7 +4,9 @@ import com.callein.hw1.hw3_callein.task.Task;
 import com.callein.hw1.hw3_callein.task.dto.TaskDto;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.plaf.LabelUI;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 
@@ -32,6 +34,17 @@ public class TaskRepository {
                 .taskDetail(task.getTaskDetail())
                 .taskDue(task.getTaskDue())
                 .build();
+    }
+
+    public List<TaskDto> findAll(){
+        return TASK_MAP.values().stream()
+                .map(task -> TaskDto.builder()
+                        .taskId(task.getTaskId())
+                        .taskTitle(task.getTaskTitle())
+                        .taskDetail(task.getTaskDetail())
+                        .taskDue(task.getTaskDue())
+                        .build())
+                .toList();
     }
 
 //    UPDATE
