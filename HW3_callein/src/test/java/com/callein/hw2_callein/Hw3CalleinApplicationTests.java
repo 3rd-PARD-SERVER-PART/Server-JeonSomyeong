@@ -1,4 +1,4 @@
-package com.callein.hw1.hw3_callein;
+package com.callein.hw2_callein;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,14 +1,12 @@
-package com.callein.hw1.hw3_callein.task.repository;
+package com.callein.hw2_callein.task.repository;
 
-import com.callein.hw1.hw3_callein.task.Task;
-import com.callein.hw1.hw3_callein.task.dto.TaskDto;
+import com.callein.hw2_callein.task.Task;
+import com.callein.hw2_callein.task.dto.TaskDto;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.plaf.LabelUI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 
 @Repository
 public class TaskRepository {

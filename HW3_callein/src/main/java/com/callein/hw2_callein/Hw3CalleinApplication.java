@@ -1,4 +1,4 @@
-package com.callein.hw1.hw3_callein;
+package com.callein.hw2_callein;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

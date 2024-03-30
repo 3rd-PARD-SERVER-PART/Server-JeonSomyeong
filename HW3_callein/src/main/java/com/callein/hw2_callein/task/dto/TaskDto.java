@@ -1,4 +1,4 @@
-package com.callein.hw1.hw3_callein.task.dto;
+package com.callein.hw2_callein.task.dto;
 
 import lombok.*;
 
