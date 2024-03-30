@@ -4,6 +4,7 @@ import com.callein.hw2_callein.task.Task;
 import com.callein.hw2_callein.task.dto.TaskDto;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,17 @@ public class TaskRepository {
 
 //    CREATE
     public void save(TaskDto taskDto){
+        if(taskDto.getTaskId()==null){
+            if(TASK_MAP.isEmpty()) taskDto.setTaskId(1);
+            else {
+                taskDto.setTaskId(Collections.max(TASK_MAP.keySet()) + 1);
+            }
+        }
+        // id 존재하면 리턴. response 는 넣지않음.
+        if(TASK_MAP.containsKey(taskDto.getTaskId())){
+            System.out.println("Save rejected. Id exists.");
+            return;
+        }
         Task t = Task.builder()
                 .taskId(taskDto.getTaskId())
                 .taskTitle(taskDto.getTaskTitle())
@@ -48,7 +60,7 @@ public class TaskRepository {
 //    UPDATE
     public void update(Integer taskId, TaskDto taskDto){
         Task task = TASK_MAP.get(taskId);
-        task.setTaskId(taskDto.getTaskId());
+        if(taskDto.getTaskId()!=null) task.setTaskId(taskDto.getTaskId());
         task.setTaskTitle(taskDto.getTaskTitle());
         task.setTaskDetail(taskDto.getTaskDetail());
         task.setTaskDue(taskDto.getTaskDue());
