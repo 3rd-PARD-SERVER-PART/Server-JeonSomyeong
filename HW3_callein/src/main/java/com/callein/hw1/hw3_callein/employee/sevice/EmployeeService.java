@@ -102,4 +102,15 @@ public class EmployeeService {
                         .build()
         ).toList();
     }
+
+    public List<EmployeeDto> findByName(String name){
+        List<Employee> employees = employeeRepository.findByName(name);
+        return employees.stream().map(employee ->
+                EmployeeDto.builder()
+                        .name(employee.getName())
+                        .salary(employee.getSalary())
+                        .position(employee.getPosition())
+                        .build()
+        ).toList();
+    }
 }

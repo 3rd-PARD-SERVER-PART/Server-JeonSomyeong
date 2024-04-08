@@ -69,4 +69,9 @@ public class EmployeeController {
     public List<EmployeeDto> readBySalaryGreaterThan(@PathVariable Integer salary){
         return employeeService.findBySalaryGreaterThan(salary);
     }
+//    이름으로 직원 리스팅하기.
+    @GetMapping("/find/name/{name}")
+    public List<EmployeeDto> findByName(@PathVariable String name){
+        return employeeService.findByName(name);
+    }
 }
