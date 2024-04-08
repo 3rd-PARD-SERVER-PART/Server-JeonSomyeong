@@ -2,6 +2,7 @@ package com.callein.hw1.hw3_callein.employee.sevice;
 
 import com.callein.hw1.hw3_callein.employee.dto.EmployeeDto;
 import com.callein.hw1.hw3_callein.employee.entity.Employee;
+import com.callein.hw1.hw3_callein.employee.entity.Position;
 import com.callein.hw1.hw3_callein.employee.repo.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,17 @@ public class EmployeeService {
         employeeRepository.save(employee);
     }
 
+    public void saveAll(List<EmployeeDto> employeeDtos){
+        List<Employee> employees = employeeDtos.stream().map(employeeDto ->
+                Employee.builder()
+                        .name(employeeDto.getName())
+                        .salary(employeeDto.getSalary())
+                        .position(employeeDto.getPosition())
+                        .build()
+        ).toList();
+        employeeRepository.saveAll(employees);
+    }
+
     public EmployeeDto read(Long id){
         Employee employee = employeeRepository.findById(id).get();
         return EmployeeDto.builder()
@@ -33,14 +45,13 @@ public class EmployeeService {
 
     public List<EmployeeDto> readAll(){
         List<Employee> employees = employeeRepository.findAll();
-        List<EmployeeDto> employeeDtos = employees.stream().map(employee ->
+        return employees.stream().map(employee ->
                 EmployeeDto.builder()
                 .name(employee.getName())
                 .salary(employee.getSalary())
                 .position(employee.getPosition())
                 .build()
                 ).toList();
-        return employeeDtos;
     }
 
     public void update(Long id, EmployeeDto employeeDto){
@@ -56,4 +67,36 @@ public class EmployeeService {
     }
 
     // JPA
+    public List<EmployeeDto> findByPosition(Position position) {
+        List<Employee> employees = employeeRepository.findByPosition(position);
+        return employees.stream().map(employee ->
+                EmployeeDto.builder()
+                        .name(employee.getName())
+                        .salary(employee.getSalary())
+                        .position(employee.getPosition())
+                        .build()
+        ).toList();
+    }
+
+    public List<EmployeeDto> findBySalaryGreaterThan(Integer salary) {
+        List<Employee> employees = employeeRepository.findBySalaryGreaterThan(salary);
+        return employees.stream().map(employee ->
+                EmployeeDto.builder()
+                        .name(employee.getName())
+                        .salary(employee.getSalary())
+                        .position(employee.getPosition())
+                        .build()
+        ).toList();
+    }
+
+    public List<EmployeeDto> findBySalaryLessThan(Integer salary) {
+        List<Employee> employees = employeeRepository.findBySalaryLessThan(salary);
+        return employees.stream().map(employee ->
+                EmployeeDto.builder()
+                        .name(employee.getName())
+                        .salary(employee.getSalary())
+                        .position(employee.getPosition())
+                        .build()
+        ).toList();
+    }
 }
