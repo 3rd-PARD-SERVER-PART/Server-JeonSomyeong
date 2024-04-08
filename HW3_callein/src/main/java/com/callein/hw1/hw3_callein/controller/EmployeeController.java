@@ -1,9 +1,12 @@
 package com.callein.hw1.hw3_callein.controller;
 
 import com.callein.hw1.hw3_callein.employee.dto.EmployeeDto;
+import com.callein.hw1.hw3_callein.employee.entity.Employee;
 import com.callein.hw1.hw3_callein.employee.entity.Position;
 import com.callein.hw1.hw3_callein.employee.sevice.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,14 +38,20 @@ public class EmployeeController {
     }
 
     @PatchMapping("/{id}")
-    public void update(@PathVariable Long id,
+    public ResponseEntity<String> update(@PathVariable Long id,
                        @RequestBody EmployeeDto employeeDto){
         employeeService.update(id, employeeDto);
+        return ResponseEntity.ok().body("{\n\"success\": true\n\"message\": \"업데이트 성공\"\n}");
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
-        employeeService.delete(id);
+    public ResponseEntity<String> delete(@PathVariable Long id){
+        Employee employee = employeeService.delete(id);
+        return ResponseEntity.ok().body("{\n\"success\": true\n\"message\": \"삭제 성공\"\n\"data\": " +
+                "{\"name\":\""
+                + employee.getName()
+                + "\",\"salary\":" + employee.getSalary()
+                + ",\"position\":\"" + employee.getPosition() + "\"}}");
     }
 
 //    JPA 적용

@@ -55,15 +55,18 @@ public class EmployeeService {
     }
 
     public void update(Long id, EmployeeDto employeeDto){
-        Employee employee = employeeRepository.findById(id).get();
+        Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
+
         employee.setName(employeeDto.getName());
         employee.setSalary(employeeDto.getSalary());
         employee.setPosition(employeeDto.getPosition());
         employeeRepository.save(employee);
     }
 
-    public void delete(Long id){
+    public Employee delete(Long id){
+        Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
         employeeRepository.deleteById(id);
+        return employee;
     }
 
     // JPA

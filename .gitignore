@@ -38,3 +38,6 @@ Temporary Items
 
 ### Ignore Seminar Directory ###
 Seminar
+
+### IntelliJ ###
+.idea
