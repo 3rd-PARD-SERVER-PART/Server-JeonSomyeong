@@ -22,6 +22,8 @@ By default, create a commit using the icon in https://gitmoji.dev/.
 
 ✅ - Add, Update `:white_check_mark:`    
 
+:heavy_plus_sign: - Add a dependency `:heavy_plus_sign:`
+
 📝 - Add or update documentation `:memo:`    
 
 🍱 - Add or update assets `:bento:`    
