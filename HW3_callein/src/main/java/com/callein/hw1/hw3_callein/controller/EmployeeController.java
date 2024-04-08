@@ -61,11 +61,11 @@ public class EmployeeController {
         return employeeService.findByPosition(position);
     }
 //    급여로 직원 리스팅하기.
-    @GetMapping("salary/less/{salary}")
+    @GetMapping("/find/salary/less/{salary}")
     public List<EmployeeDto> readBySalaryLessThan(@PathVariable Integer salary){
         return employeeService.findBySalaryLessThan(salary);
     }
-    @GetMapping("salary/greater/{salary}")
+    @GetMapping("/find/salary/greater/{salary}")
     public List<EmployeeDto> readBySalaryGreaterThan(@PathVariable Integer salary){
         return employeeService.findBySalaryGreaterThan(salary);
     }
