@@ -1,18 +1,12 @@
 package com.callein.pard.hw4_callein.user.servise;
 
-import com.callein.pard.hw4_callein.book.entity.Book;
-import com.callein.pard.hw4_callein.book.repo.BookRepo;
-import com.callein.pard.hw4_callein.user.dto.UserLoanHistoryDTO;
 import com.callein.pard.hw4_callein.user.entity.User;
 import com.callein.pard.hw4_callein.user.dto.UserDTO;
-import com.callein.pard.hw4_callein.user.entity.UserLoanHistory;
 import com.callein.pard.hw4_callein.user.repo.UserRepo;
-import com.callein.pard.hw4_callein.book.dto.BookReadDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

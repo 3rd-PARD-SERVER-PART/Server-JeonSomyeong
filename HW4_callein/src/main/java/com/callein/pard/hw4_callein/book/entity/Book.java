@@ -2,7 +2,6 @@ package com.callein.pard.hw4_callein.book.entity;
 
 import com.callein.pard.hw4_callein.book.dto.BookCreateDTO;
 import com.callein.pard.hw4_callein.book.dto.BookUpdateDTO;
-import com.callein.pard.hw4_callein.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;

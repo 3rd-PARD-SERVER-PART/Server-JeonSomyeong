@@ -5,7 +5,6 @@ import com.callein.pard.hw4_callein.book.dto.BookReadDTO;
 import com.callein.pard.hw4_callein.book.dto.BookUpdateDTO;
 import com.callein.pard.hw4_callein.book.entity.Book;
 import com.callein.pard.hw4_callein.book.repo.BookRepo;
-import com.callein.pard.hw4_callein.user.dto.UserDTO;
 import com.callein.pard.hw4_callein.user.repo.UserRepo;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

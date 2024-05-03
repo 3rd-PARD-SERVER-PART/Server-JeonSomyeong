@@ -1,6 +1,5 @@
 package com.callein.pard.hw4_callein.user.entity;
 
-import com.callein.pard.hw4_callein.book.entity.Book;
 import com.callein.pard.hw4_callein.user.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
