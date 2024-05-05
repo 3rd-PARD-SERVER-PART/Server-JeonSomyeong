@@ -1,6 +1,6 @@
 package com.callein.pard.hw5_callein.user.dto;
 
-import com.callein.pard.hw4_callein.user.entity.User;
+import com.callein.pard.hw5_callein.user.entity.User;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;

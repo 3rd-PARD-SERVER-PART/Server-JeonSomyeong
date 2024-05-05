@@ -1,7 +1,7 @@
 package com.callein.pard.hw5_callein.book.entity;
 
-import com.callein.pard.hw4_callein.book.dto.BookCreateDTO;
-import com.callein.pard.hw4_callein.book.dto.BookUpdateDTO;
+import com.callein.pard.hw5_callein.book.dto.BookCreateDTO;
+import com.callein.pard.hw5_callein.book.dto.BookUpdateDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

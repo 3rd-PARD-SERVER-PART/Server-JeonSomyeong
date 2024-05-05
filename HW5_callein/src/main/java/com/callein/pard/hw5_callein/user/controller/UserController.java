@@ -1,7 +1,7 @@
 package com.callein.pard.hw5_callein.user.controller;
 
-import com.callein.pard.hw4_callein.user.dto.UserDTO;
-import com.callein.pard.hw4_callein.user.servise.UserService;
+import com.callein.pard.hw5_callein.user.dto.UserDTO;
+import com.callein.pard.hw5_callein.user.servise.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

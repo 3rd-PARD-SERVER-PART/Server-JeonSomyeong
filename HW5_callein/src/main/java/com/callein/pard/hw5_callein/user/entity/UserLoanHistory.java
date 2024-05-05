@@ -1,7 +1,7 @@
 package com.callein.pard.hw5_callein.user.entity;
 
-import com.callein.pard.hw4_callein.book.entity.Book;
-import com.callein.pard.hw4_callein.user.dto.UserLoanHistoryDTO;
+import com.callein.pard.hw5_callein.book.entity.Book;
+import com.callein.pard.hw5_callein.user.dto.UserLoanHistoryDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;

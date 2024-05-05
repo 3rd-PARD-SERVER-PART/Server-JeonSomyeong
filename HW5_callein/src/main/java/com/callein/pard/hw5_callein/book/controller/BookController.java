@@ -1,9 +1,9 @@
 package com.callein.pard.hw5_callein.book.controller;
 
-import com.callein.pard.hw4_callein.book.dto.BookCreateDTO;
-import com.callein.pard.hw4_callein.book.dto.BookReadDTO;
-import com.callein.pard.hw4_callein.book.dto.BookUpdateDTO;
-import com.callein.pard.hw4_callein.book.service.BookService;
+import com.callein.pard.hw5_callein.book.dto.BookCreateDTO;
+import com.callein.pard.hw5_callein.book.dto.BookReadDTO;
+import com.callein.pard.hw5_callein.book.dto.BookUpdateDTO;
+import com.callein.pard.hw5_callein.book.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

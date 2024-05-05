@@ -1,6 +1,6 @@
 package com.callein.pard.hw5_callein.user.entity;
 
-import com.callein.pard.hw4_callein.user.dto.UserDTO;
+import com.callein.pard.hw5_callein.user.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

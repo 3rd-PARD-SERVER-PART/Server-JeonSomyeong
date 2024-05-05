@@ -1,7 +1,7 @@
 package com.callein.pard.hw5_callein.user.dto;
 
-import com.callein.pard.hw4_callein.book.dto.BookReadDTO;
-import com.callein.pard.hw4_callein.user.entity.UserLoanHistory;
+import com.callein.pard.hw5_callein.book.dto.BookReadDTO;
+import com.callein.pard.hw5_callein.user.entity.UserLoanHistory;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
