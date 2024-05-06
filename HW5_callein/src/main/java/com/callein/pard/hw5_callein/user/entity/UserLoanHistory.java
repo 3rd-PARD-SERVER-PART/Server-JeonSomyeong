@@ -16,12 +16,12 @@ public class UserLoanHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(nullable = false, name = "user_id")
+    @JoinColumn(nullable = false)
     @ManyToOne
     private User user;
 
     @ManyToOne
-    @JoinColumn(nullable = false ,name = "book_id")
+    @JoinColumn(nullable = false)
     private Book book;
 
     @ColumnDefault("0")

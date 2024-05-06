@@ -38,13 +38,6 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         User user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user));
 
-//        return new DefaultOAuth2User(
-//                Collections.singleton(new SimpleGrantedAuthority(
-//                        user.getRoleKey())),
-//                attributes.getAttributes(),
-//                attributes.getNameAttributeKey()
-//        );
-
         return super.loadUser(oAuth2UserRequest);
     }
     private User saveOrUpdate(OAuthAttributes attributes) {

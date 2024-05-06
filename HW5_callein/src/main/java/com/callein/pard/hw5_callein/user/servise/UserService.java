@@ -23,10 +23,6 @@ public class UserService {
         userRepo.save(User.toEntity(dto));
     }
 
-//    public void updateUser(UserDTO.Create dto){
-//        userRepo.save(User.toEntity(dto));
-//    }
-
     public UserDTO.Read readById(Long userId){
         User user = userRepo.findById(userId).orElseThrow();
         List<UserLoanHistoryDTO.Read> histories = findHistoryById(userId);
