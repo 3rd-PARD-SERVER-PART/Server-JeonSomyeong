@@ -16,29 +16,29 @@ public class UserLoanHistoryDTO {
         private boolean isReturn;
     }
 
-    @Getter
-    @Setter
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public static class Update{
-        private Long id;
-        private UserDTO.Read userDto;
-        private BookReadDTO bookDto;
-        private boolean isReturn;
-
-        public Update(UserLoanHistory userLoanHistory){
-            this.isReturn = userLoanHistory.isReturn();
-        }
-        public Update(UserLoanHistory userLoanHistory, UserDTO.Read userDto){
-            this.isReturn = userLoanHistory.isReturn();
-            this.userDto = userDto;
-        }
-        public Update(UserLoanHistory userLoanHistory, UserDTO.Read userDto, BookReadDTO bookDto){
-            this.id = userLoanHistory.getId();
-            this.isReturn = userLoanHistory.isReturn();
-            this.bookDto = bookDto;
-            this.userDto = userDto;
-        }
-    }
+//    @Getter
+//    @Setter
+//    @JsonInclude(JsonInclude.Include.NON_NULL)
+//    public static class Update{
+//        private Long id;
+//        private UserDTO.Read userDto;
+//        private BookReadDTO bookDto;
+//        private boolean isReturn;
+//
+//        public Update(UserLoanHistory userLoanHistory){
+//            this.isReturn = userLoanHistory.isReturn();
+//        }
+//        public Update(UserLoanHistory userLoanHistory, UserDTO.Read userDto){
+//            this.isReturn = userLoanHistory.isReturn();
+//            this.userDto = userDto;
+//        }
+//        public Update(UserLoanHistory userLoanHistory, UserDTO.Read userDto, BookReadDTO bookDto){
+//            this.id = userLoanHistory.getId();
+//            this.isReturn = userLoanHistory.isReturn();
+//            this.bookDto = bookDto;
+//            this.userDto = userDto;
+//        }
+//    }
 
     @Getter
     @Setter

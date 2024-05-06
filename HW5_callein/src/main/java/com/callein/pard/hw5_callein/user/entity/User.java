@@ -1,5 +1,6 @@
 package com.callein.pard.hw5_callein.user.entity;
 
+import com.callein.pard.hw5_callein.entity.BaseTimeEntity;
 import com.callein.pard.hw5_callein.user.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,14 +16,19 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
+@Table(name = "users")
+public class User extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String email;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
