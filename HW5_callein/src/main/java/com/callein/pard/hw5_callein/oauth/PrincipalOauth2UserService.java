@@ -13,8 +13,6 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -30,10 +28,13 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         OAuth2User oAuth2User = super.loadUser(oAuth2UserRequest);
         log.info("📍 oauth : "+ oAuth2User.getAttributes());
 
-        String registrationId = oAuth2UserRequest.getClientRegistration().getRegistrationId();
-        String userNameAttributeName = oAuth2UserRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
+        //// 객체에서 다른 정보(클라이언트 ID, 클라이언트 시크릿 등)를 가져오는 데 사용하지만, 여기선 사용 X
+        // String registrationId = oAuth2UserRequest.getClientRegistration().getRegistrationId();
 
-        OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+        //// userNameAttributeName : 사용자의 고유 식별자 속성 이름, 업체마다 이게 다름.
+        // ex) Google -> sub , Facebook -> id
+        String userNameAttributeName = oAuth2UserRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
+        OAuthAttributes attributes = OAuthAttributes.of(userNameAttributeName, oAuth2User.getAttributes());
 
         User user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user));
