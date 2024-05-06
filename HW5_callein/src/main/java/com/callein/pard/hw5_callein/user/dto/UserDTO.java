@@ -12,8 +12,7 @@ public class UserDTO {
     @Setter
     public static class Create{
         private String name;
-        private Integer age;
-        private String major;
+        private String email;
     }
     @Getter
     @Setter
@@ -21,24 +20,21 @@ public class UserDTO {
     public static class Read{
         private Long id;
         private String name;
-        private Integer age;
-        private String major;
+        private String email;
         private List<UserLoanHistoryDTO.Read> userLoanHistories;
 
         // history 가 없는 유저 탐색
         public Read(User user, List<UserLoanHistoryDTO.Read> history){
             this.id = user.getUserId();
             this.name = user.getName();
-            this.age = user.getAge();
-            this.major = user.getMajor();
+            this.email = user.getEmail();
             this.userLoanHistories = history;
         }
         // history 가 있는 유저 탐색
         public Read(User user) {
             this.id = user.getUserId();
             this.name = user.getName();
-            this.age = user.getAge();
-            this.major = user.getMajor();
+            this.email = user.getEmail();
         }
     }
 }

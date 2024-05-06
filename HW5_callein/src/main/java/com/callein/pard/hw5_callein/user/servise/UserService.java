@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -36,7 +37,7 @@ public class UserService {
         return userLoanHistoryRepo.findAll()
                 .stream()
                 .map(history -> {
-                    if(userID == history.getUser().getUserId()){
+                    if(Objects.equals(userID, history.getUser().getUserId())){
                         return new UserLoanHistoryDTO.Read(history,
                                 new UserDTO.Read(history.getUser()),
                                 new BookReadDTO(history.getBook()));

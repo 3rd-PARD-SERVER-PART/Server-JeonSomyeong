@@ -66,18 +66,4 @@ public class UserLoanService {
                         ))
                 .toList();
     }
-
-//    public List<UserLoanHistoryDTO.Read> findHistoryById(Long userID){
-//       return userLoanHistoryRepo.findAll()
-//                .stream()
-//                .map(history -> {
-//                    if(userID == history.getUser().getUserId()){
-//                        return new UserLoanHistoryDTO.Read(history,
-//                                new UserDTO.Read(history.getUser()),
-//                                new BookReadDTO(history.getBook()));
-//                    }
-//                    else return null;
-//                })
-//                .toList();
-//    }
 }

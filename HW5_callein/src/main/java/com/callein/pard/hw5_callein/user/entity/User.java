@@ -22,17 +22,14 @@ public class User {
     private Long userId;
 
     private String name;
-    private Integer age;
-    private String major;
-
+    private String email;
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
     public static User toEntity(UserDTO.Create dto) {
         return User.builder()
                 .name(dto.getName())
-                .age(dto.getAge())
-                .major(dto.getMajor())
+                .email(dto.getEmail())
                 .build();
     }
 }
