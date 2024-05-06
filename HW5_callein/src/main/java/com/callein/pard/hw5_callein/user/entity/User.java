@@ -32,6 +32,11 @@ public class User extends BaseTimeEntity {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
+    public User update(String name){
+        this.name = name;
+        return this;
+    }
+
     public static User toEntity(UserDTO.Create dto) {
         return User.builder()
                 .name(dto.getName())
